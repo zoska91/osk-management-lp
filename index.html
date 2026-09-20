@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OSK Management · grafik, kursanci i rozliczenia w jednej aplikacji</title>
+<meta name="description" content="OSK Management zbiera grafik, kursantów, instruktorów, pojazdy i rozliczenia ośrodka szkolenia kierowców w jedną aplikację.">
+<meta property="og:title" content="OSK Management">
+<meta property="og:description" content="Grafik, kursanci, instruktorzy, pojazdy i rozliczenia ośrodka szkolenia kierowców w jednej aplikacji.">
+<meta property="og:image" content="./assets/screens/dashboard.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="./favicon.svg">
+<link rel="stylesheet" href="./assets/fonts/fonts.css">
+<link rel="stylesheet" href="./engine/scrollcraft.css">
+<link rel="stylesheet" href="./landing.css">
+</head>
+<body>
+
+<span data-sc-progress></span>
+
+<header class="site-bar">
+  <div class="site-bar__inner">
+    <a class="brand" href="#top">OSK Management</a>
+    <nav class="site-nav" aria-label="Sekcje">
+      <a href="#grafik" data-nav>Grafik</a>
+      <a href="#kursant" data-nav>Kursant</a>
+      <a href="#instruktor" data-nav>Instruktor</a>
+      <a href="#flota" data-nav>Flota</a>
+      <a href="#finanse" data-nav>Finanse</a>
+    </nav>
+    <a class="btn btn--primary btn--sm" href="https://osk-management.home-server.fun/login">Zaloguj się</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1 · HERO: the product flies in from an angle and lands full-width -->
+  <section id="top" class="scene scene--hero" data-sc-act="pin" data-sc-span="2.2">
+    <div data-sc-stage class="hero">
+      <div class="hero__copy">
+        <p class="eyebrow">Aplikacja dla ośrodków szkolenia kierowców</p>
+        <h1 class="sc-display hero__title">Cała szkoła jazdy w&nbsp;jednym miejscu.</h1>
+        <p class="sc-lede hero__lede">Grafik, kursanci, instruktorzy, pojazdy i rozliczenia. Właściciel, biuro, instruktor i kursant logują się do tej samej aplikacji, każdy do swojego widoku.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="https://osk-management.home-server.fun/login">Zaloguj się</a>
+          <a class="btn btn--ghost" href="#kursant">Zobacz drogę kursanta</a>
+        </div>
+      </div>
+
+      <div class="hero__scene">
+        <figure class="shot hero__main">
+          <img src="./assets/screens/dashboard.png" width="2776" height="1894" alt="Pulpit właściciela: kursanci, instruktorzy i pojazdy, jazdy w trasie, terminy pojazdów i instruktorów, egzaminy i urlopy.">
+        </figure>
+        <figure class="shot hero__float hero__float--a">
+          <img src="./assets/screens/ongoing.png" width="976" height="702" alt="Karta Aktualnie w trasie z postępem dwóch trwających jazd.">
+        </figure>
+        <figure class="shot hero__float hero__float--b">
+          <img src="./assets/screens/instr-featured.png" width="776" height="1118" alt="Obecna jazda instruktora z przyciskami zakończenia jazdy i dodania wpłaty.">
+        </figure>
+      </div>
+
+      <p class="hero__caption">Pulpit właściciela: kto jest teraz w trasie, którym autom kończy się przegląd, kto czeka na egzamin.</p>
+    </div>
+  </section>
+
+  <!-- 2 · GRAFIK: availability dissolves into the schedule, then the camera leans in -->
+  <section id="grafik" class="scene scene--navy" data-sc-act="pin" data-sc-span="2.8">
+    <div data-sc-stage class="zoom">
+      <div class="zoom__head">
+        <p class="eyebrow eyebrow--light">Grafik</p>
+        <div class="swap">
+          <h2 class="sc-display swap__item" data-sc-cue="0 0.36 0">Najpierw: kto kiedy może jeździć.</h2>
+          <h2 class="sc-display swap__item" data-sc-cue="0.3 1 0.3 0">Potem: jeden grafik dla aut, instruktorów i&nbsp;kursantów.</h2>
+        </div>
+      </div>
+
+      <div class="zoom__view">
+        <figure class="shot zoom__avail">
+          <img src="./assets/screens/availability.png" width="2848" height="662" alt="Tygodniowa siatka dyspozycyjności instruktora z zaznaczonymi godzinami.">
+          <figcaption class="zoom__label">Dyspozycyjność instruktora, tydzień</figcaption>
+        </figure>
+
+        <div class="zoom__frame">
+          <figure class="shot zoom__schedule">
+            <img src="./assets/screens/schedule.png" width="2848" height="554" alt="Grafik dnia: pojazdy WZ 12345 i WZ 67890 w wierszach, przydział instruktora, jazda kursantki i cień instruktora bez auta.">
+          </figure>
+          <span class="callout" style="--x:17%;--y:58%" data-sc-cue="0.46 1 0.3 0"><b>Pojazdy w wierszach</b> z kategorią prawa jazdy</span>
+          <span class="callout" style="--x:62%;--y:12%" data-sc-cue="0.56 1 0.3 0"><b>Przydział instruktora</b> do auta na godziny</span>
+          <span class="callout callout--up" style="--x:40%;--y:52%" data-sc-cue="0.66 1 0.3 0"><b>Jazda kursantki</b> w ramach przydziału</span>
+          <span class="callout callout--up" style="--x:70%;--y:92%" data-sc-cue="0.76 1 0.3 0"><b>Cień instruktora</b> bez przypisanego auta: widać go, ale nie da się zarezerwować</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · KURSANT: one student, walked sideways through six real screens -->
+  <section id="kursant" class="scene scene--tint" data-sc-act="pan" data-sc-span="6">
+    <div data-sc-stage class="pan">
+      <div class="rail" data-sc-pan="0.02">
+        <div class="rail__intro step" style="--i:0">
+          <p class="eyebrow">Droga kursanta</p>
+          <h2 class="sc-display">Od karteczki w recepcji do rozliczenia.</h2>
+          <p class="sc-body">Jedna osoba, sześć ekranów. Przewijaj dalej, a przejdziemy razem z nią przez całą aplikację.</p>
+        </div>
+
+        <article class="step" style="--i:1;--w:46rem">
+          <figure class="shot"><img src="./assets/screens/students.png" width="2840" height="1946" alt="Lista kursantów z kartą Anny Kowalskiej, postęp kursu 12 z 30 godzin."></figure>
+          <h3>Lista kursantów</h3>
+          <p>Kontakt, PKK, data rozpoczęcia i postęp kursu widać od razu. Filtry, sortowanie, widok kart albo tabeli.</p>
+        </article>
+
+        <article class="step" style="--i:2;--w:22rem">
+          <figure class="shot"><img src="./assets/screens/student-details.png" width="800" height="900" alt="Karta kursanta: telefon, e-mail, PKK, PESEL, kurs podstawowy kat. B 18 z 30 godzin i planowane egzaminy."></figure>
+          <h3>Karta kursanta</h3>
+          <p>Kliknięcie otwiera szczegóły: dane formalne, kurs z licznikiem godzin, zaplanowane egzaminy.</p>
+        </article>
+
+        <article class="step" style="--i:3;--w:40rem">
+          <figure class="shot"><img src="./assets/screens/lesson-form.png" width="2136" height="1298" alt="Formularz nowej jazdy: rodzaj, pojazd, instruktor, kursant, suwak godziny rozpoczęcia, data i czas trwania."></figure>
+          <h3>Nowa jazda</h3>
+          <p>Pojazd, instruktor, godzina na suwaku i czas trwania. Jazda albo egzamin, w jednym formularzu.</p>
+        </article>
+
+        <article class="step" style="--i:4;--w:44rem">
+          <figure class="shot"><img src="./assets/screens/calendar.png" width="2816" height="1662" alt="Tygodniowy kalendarz z jazdą Anny Kowalskiej w poniedziałek od 8:00 do 10:00."></figure>
+          <h3>Kalendarz</h3>
+          <p>Jazda ląduje w tygodniowym kalendarzu kursanta i instruktora, z kategorią i pojazdem.</p>
+        </article>
+
+        <article class="step step--phone" style="--i:5;--w:17rem">
+          <div class="device device--sm"><div class="device__screen"><img class="device__scroll" src="./assets/screens/student-mobile.png" width="678" height="2108" alt="Panel kursanta w telefonie: odliczanie do egzaminu, następna jazda i lista przyszłych jazd."></div></div>
+          <h3>Telefon kursanta</h3>
+          <p>Kursant widzi swoją najbliższą jazdę i może ją odwołać, z podanym kosztem.</p>
+        </article>
+
+        <article class="step" style="--i:6;--w:46rem">
+          <figure class="shot"><img src="./assets/screens/settlements.png" width="2840" height="716" alt="Rozliczenia kursantów z paskami wpłat i zaległością 800 zł oznaczoną na czerwono."></figure>
+          <h3>Rozliczenie</h3>
+          <p>Wpłaty, pozostała kwota i zaległości każdego kursanta, bez zeszytu kasowego.</p>
+        </article>
+
+        <div class="rail__end step" style="--i:7">
+          <p class="sc-display rail__end-title">Jedna kursantka. Jeden system.</p>
+          <a class="btn btn--primary" href="https://osk-management.home-server.fun/login">Zaloguj się</a>
+        </div>
+      </div>
+
+      <ol class="tracker" aria-hidden="true">
+        <li>Lista</li><li>Karta</li><li>Jazda</li><li>Kalendarz</li><li>Telefon</li><li>Rozliczenie</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 4 · INSTRUKTOR: a hand of cards dealt one over another -->
+  <section id="instruktor" class="scene" data-sc-act="pin" data-sc-span="2.8">
+    <div data-sc-stage class="deck">
+      <div class="deck__copy">
+        <p class="eyebrow">Instruktor</p>
+        <div class="swap swap--tall">
+          <div class="swap__item" data-sc-cue="0 0.36 0">
+            <h2 class="sc-display">Bieżąca jazda na wierzchu.</h2>
+            <p class="sc-body">Kursant, auto, postęp kursu. Zakończenie jazdy, notatka, wpłata albo nieobecność: jednym dotknięciem, między jazdami.</p>
+          </div>
+          <div class="swap__item" data-sc-cue="0.3 0.7">
+            <h2 class="sc-display">Plan dnia pod kciukiem.</h2>
+            <p class="sc-body">Pasek tygodnia i lista jazd na wybrany dzień, z kategorią i rodzajem jazdy.</p>
+          </div>
+          <div class="swap__item" data-sc-cue="0.64 1 0.3 0">
+            <h2 class="sc-display">Uprawnienia i terminy w karcie.</h2>
+            <p class="sc-body">Numer uprawnień, badania lekarskie i warsztaty z datą ważności. Pulpit przypomni, zanim termin minie.</p>
+          </div>
+        </div>
+      </div>
+      <div class="deck__cards">
+        <figure class="shot card" style="--i:0;--last:1"><img src="./assets/screens/instr-featured.png" width="776" height="1118" alt="Obecna jazda instruktora z Anną Kowalską, postęp kursu 12 z 30 godzin."></figure>
+        <figure class="shot card" style="--i:1;--last:1"><img src="./assets/screens/day-agenda.png" width="840" height="558" alt="Plan dnia: dwie jazdy, w tym egzamin."></figure>
+        <figure class="shot card card--tall" style="--i:2;--last:0"><img src="./assets/screens/instructor-panel.png" width="828" height="2200" alt="Karta instruktora Jana Nowaka z numerem uprawnień, badaniami i warsztatami."></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · FLOTA: the app's own drawer slides open under the scroll -->
+  <section id="flota" class="scene scene--navy" data-sc-act="pin" data-sc-span="2.2">
+    <div data-sc-stage class="drawer">
+      <div class="drawer__head">
+        <p class="eyebrow eyebrow--light">Flota</p>
+        <div class="swap">
+          <h2 class="sc-display swap__item" data-sc-cue="0 0.4 0">Każde auto ma swoją kartę.</h2>
+          <h2 class="sc-display swap__item" data-sc-cue="0.34 1 0.3 0">Przegląd, ubezpieczenie, licznik, usterki.</h2>
+        </div>
+      </div>
+      <div class="window">
+        <img class="window__base" src="./assets/screens/vehicles.png" width="2840" height="1946" alt="Lista pojazdów szkoły.">
+        <div class="window__drawer">
+          <img src="./assets/screens/vehicle-panel.png" width="828" height="2200" alt="Karta pojazdu WZ 12345: kategoria, marka, model, przegląd ważny do, ubezpieczenie, stan licznika, przycisk dodania usterki.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · FINANSE: tabs switch under the scroll -->
+  <section id="finanse" class="scene scene--tint" data-sc-act="pin" data-sc-span="2.4">
+    <div data-sc-stage class="tabs">
+      <div class="tabs__head">
+        <p class="eyebrow">Finanse</p>
+        <h2 class="sc-display">Zaległość widać, zanim zapyta o&nbsp;nią kursant.</h2>
+        <div class="tabs__bar" aria-hidden="true">
+          <span class="tabs__tab" style="--i:0">Rozliczenia</span>
+          <span class="tabs__tab" style="--i:1">Wpłaty</span>
+          <span class="tabs__tab" style="--i:2;--last:1">Historia jazd</span>
+        </div>
+      </div>
+      <div class="tabs__panels">
+        <figure class="shot tabs__panel" style="--i:0"><img src="./assets/screens/settlements.png" width="2840" height="716" alt="Rozliczenia czterech kursantów z postępem wpłat i zaległością."></figure>
+        <figure class="shot tabs__panel" style="--i:1"><img src="./assets/screens/payments.png" width="2840" height="472" alt="Tabela wpłat."></figure>
+        <figure class="shot tabs__panel" style="--i:2;--last:1"><img src="./assets/screens/history.png" width="2840" height="712" alt="Historia jazd z jazdą dodatkową oznaczoną osobno."></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · PEAK: the student's phone rises and scrolls itself -->
+  <section id="telefon" class="scene scene--sky" data-sc-act="pin" data-sc-span="3">
+    <div data-sc-stage class="phone">
+      <div class="phone__head">
+        <p class="eyebrow">Kursant</p>
+        <h2 class="sc-display">Kursant wie, kiedy ma egzamin. Bez dzwonienia do biura.</h2>
+      </div>
+      <div class="phone__stage">
+        <div class="device">
+          <div class="device__screen"><img class="device__scroll" src="./assets/screens/student-mobile.png" width="678" height="2108" alt="Panel kursanta: odliczanie do egzaminu teoretycznego, następna jazda z Katarzyną Wójcik, przycisk odwołania jazdy i lista przyszłych jazd."></div>
+        </div>
+        <span class="tag tag--l" style="--y:12%" data-sc-cue="0.06 0.52">Odliczanie do egzaminu</span>
+        <span class="tag tag--r" style="--y:42%" data-sc-cue="0.14 0.52">Następna jazda: instruktor i auto</span>
+        <span class="tag tag--l" style="--y:62%" data-sc-cue="0.22 0.52">Odwołanie jazdy z podanym kosztem</span>
+        <span class="tag tag--r" style="--y:50%" data-sc-cue="0.58 1 0.3 0">Wszystkie przyszłe jazdy, dzień po dniu</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · USTAWIENIA: ordinary flow, loose bento -->
+  <section id="ustawienia" class="settings" data-sc-act="flow">
+    <div class="sc-wrap settings__grid">
+      <div class="settings__copy sc-stack" data-sc-in data-sc-stagger="60">
+        <p class="eyebrow">Ustawienia szkoły</p>
+        <h2 class="sc-display">Zasady ustawia szkoła, nie programista.</h2>
+        <p class="sc-body">Długość slotu w grafiku, domyślny czas jazdy, cennik jazd dodatkowych, zasady odwołań, uprawnienia instruktorów i tematy jazd.</p>
+      </div>
+      <figure class="shot settings__main" data-sc-reveal="up" data-sc-reveal-at="0 0.35"><img src="./assets/screens/settings.png" width="2808" height="2016" alt="Ustawienia szkoły: dane szkoły, ustawienia grafiku i dodatkowy cennik."></figure>
+      <figure class="shot settings__a" data-sc-parallax="-0.9"><img src="./assets/screens/permissions.png" width="1136" height="470" alt="Uprawnienie instruktorów z przypisanymi osobami."></figure>
+      <figure class="shot settings__b" data-sc-parallax="0.7"><img src="./assets/screens/topic-groups.png" width="1736" height="680" alt="Grupy tematów jazd z rozwiniętą listą."></figure>
+    </div>
+  </section>
+
+  <!-- 9 · CLOSE -->
+  <section id="start" class="scene scene--navy" data-sc-act="pin" data-sc-span="1.25">
+    <div data-sc-stage class="close" data-sc-spotlight>
+      <div class="close__inner">
+        <h2 class="sc-display close__title" data-sc-cue="0 1 0 0">Poukładaj swoją szkołę jazdy.</h2>
+        <p class="sc-lede close__lede" data-sc-cue="0 1 0 0">Grafik, kursanci, instruktorzy, flota i rozliczenia w jednej aplikacji, w przeglądarce i w telefonie.</p>
+        <a class="btn btn--light btn--lg" href="https://osk-management.home-server.fun/login" data-sc-magnet="0.25" data-sc-cue="0 1 0 0" data-sc-rise="0">Zaloguj się</a>
+      </div>
+      <footer class="close__foot">
+        <span class="brand brand--light">OSK Management</span>
+        <span>Aplikacja dla ośrodków szkolenia kierowców</span>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<script src="./engine/scrollcraft.js"></script>
+<script>
+  ScrollCraft.mount(document.body);
+
+  (function () {
+    // Nav highlight for the section under the viewport centre.
+    var links = {};
+    document.querySelectorAll("[data-nav]").forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var a = links[e.target.id];
+          if (a) a.classList.toggle("is-active", e.isIntersecting);
+        });
+      }, { rootMargin: "-50% 0px -50% 0px" });
+      Object.keys(links).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+    }
+
+    // Journey tracker under the student rail: light up the step being shown.
+    var pan = document.getElementById("kursant");
+    var steps = pan ? pan.querySelectorAll(".tracker li") : [];
+    var last = -1;
+    function tick() {
+      var p = parseFloat(pan.style.getPropertyValue("--sc-p")) || 0;
+      var idx = Math.min(steps.length - 1, Math.max(0, Math.floor(p * (steps.length + 1.2) - 0.4)));
+      if (idx !== last) {
+        steps.forEach(function (li, i) { li.classList.toggle("is-on", i <= idx); li.classList.toggle("is-current", i === idx); });
+        last = idx;
+      }
+      requestAnimationFrame(tick);
+    }
+    if (steps.length) requestAnimationFrame(tick);
+  })();
+</script>
+</body>
+</html>
